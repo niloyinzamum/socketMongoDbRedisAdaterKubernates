@@ -24,8 +24,8 @@ async function main() {
   const server = createServer(app);
   const io = new Server(server);
 
-  // Configure Socket.IO to use Redis adapter
-  io.adapter(redisAdapter({ host: 'redis-host', port: 6379 }));
+
+  io.adapter(redisAdapter({ host: '127.0.0.1', port: 6379 }));
 
   app.use('/', require('../routes/api'));
 
